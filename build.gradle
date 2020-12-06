@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.thenullproject.roverimages'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+}
+
+
+application {
+    mainClass = 'com.thenullproject.roverimages.Main'
+}
