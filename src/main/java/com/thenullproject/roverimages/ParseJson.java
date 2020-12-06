@@ -29,7 +29,7 @@ public class ParseJson {
     }
 
     /**
-     * Gets the item in the given array String at the index specified.
+     * Gets the item in the given array String at the index specified.<br>
      * Note: JSONArray and JSONObject types returned as Strings
      * @param jsonArray The JSON array in String format
      * @param index Array index of item to retrieve
@@ -69,27 +69,34 @@ public class ParseJson {
     }
 
     /**
-     * Gets a set of values using the provided keys from the JSON String. The returned values will
-     * correspond to each key that was passed in the order they were passed. Note: Keys for any nested
-     * objects must precede the intended key to look up. Last key cannot be a nested object, only a value,
-     * or nested array
-     *
-     * For example, to get the value for item_1, call
-     * getJsonObjectValues("main_object", "nested_object", "item_1")[0]
-     *
+     * <p>
+     *      Gets a set of values using the provided keys from the JSON String. The returned values will
+     *      correspond to each key that was passed in the order they were passed. Note: Keys for any nested
+     *      objects must precede the intended key to look up. Last key cannot be a nested object, only a value,
+     *      or nested array
+     * </p>
+     * <br>
+     * <p>
+     *      For example, to get the value for item_1, call
+     *      getJsonObjectValues("main_object", "nested_object", "item_1")[0]
+     * </p>
+     * <pre>
+     * {@code
      * "main_object": {
      *      "nested_object": {
      *          "item_1": true
      *      }
-     * }
+     * }}
+     * </pre>
+     *
      * Any nested arrays will be returned as a String, use {@link #getJsonArrayItem(String, int)} to fetch
      * a specific item from the array
      * @param json The JSON to parse as a String
      * @param keys A variable length of keys of the key-value pairs to look up. For nested objects,
      *             precede required key to look up with parent object keys
      * @return An Object[] array containing the JSON values. This may vary in length from the amount of keys
-     * passed. JSONArray in String format if value is a nested array. Method will return null if:
-     *      - ParseException, NullPointerException or IndexOutOfBoundsException occurs
+     * passed. JSONArray in String format if value is a nested array. Method will return null if:<br>
+     *      - ParseException, NullPointerException or IndexOutOfBoundsException occurs<br>
      *      - One or more keys does not exist
      */
     public Object[] getJsonObjectValues(String json, String... keys) {
