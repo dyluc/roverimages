@@ -41,7 +41,7 @@ public class Main{
                 boolean validRover = (args[1].equalsIgnoreCase("curiosity")||
                         args[1].equalsIgnoreCase("spirit")||
                         args[1].equalsIgnoreCase("opportunity"))?true:false;
-                if(sol >= 1 && validRover) {
+                if(sol >= 0 && validRover) {
                     run(sol, args[1], args[2]);
                     failed = false;
                 }
@@ -99,14 +99,13 @@ public class Main{
                         "camera", "full_name",
                         "id");
 
-                if(photoValues != null) {
+                if (photoValues != null) {
 
                     long photoSol = (long) photoValues[0];
                     String photoImageSrc = (String) photoValues[1];
                     String photoRover = (String) photoValues[2];
                     String photoCamera = (String) photoValues[3];
                     long photoId = (long) photoValues[4];
-
 
                     StringBuilder filePath = new StringBuilder(photoDir)
                             .append("sol_").append(photoSol).append("/")
