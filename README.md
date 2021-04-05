@@ -1,7 +1,7 @@
 # roverimages
 **Update: now supports fetching images from new Mars Perseverance rover**
 
-A command-line tool for downloading image data gathered by NASA's Curiosity, Opportunity, and Spirit rovers.
+A command-line tool for downloading image data gathered by NASA's Curiosity, Opportunity, Spirit and Perseverance rovers.
 
 Note that you will need an API key to use this, you can get one here: https://api.nasa.gov
 
