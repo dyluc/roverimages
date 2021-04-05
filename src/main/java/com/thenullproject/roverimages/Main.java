@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.Duration;
+import java.util.List;
 
 import static java.nio.file.StandardOpenOption.*;
 import static java.time.temporal.ChronoUnit.MINUTES;
@@ -20,7 +21,7 @@ public class Main{
                     usage: rovfetch <sol> <rover> <directory>
                     
                     sol         : the martian sol to fetch images from
-                    rover       : one of three mars rovers; curiosity, opportunity or spirit
+                    rover       : one of four mars rovers; curiosity, opportunity, spirit or perseverance
                     directory   : the resource directory to save json and the fetched images
                     
                     example: the following would fetch all curiosity rover images from sol 19 saving them into ./res:
@@ -38,9 +39,7 @@ public class Main{
         if(args.length == 3) {
             try {
                 int sol = Integer.parseInt(args[0]);
-                boolean validRover = (args[1].equalsIgnoreCase("curiosity")||
-                        args[1].equalsIgnoreCase("spirit")||
-                        args[1].equalsIgnoreCase("opportunity"))?true:false;
+                boolean validRover = List.of("curiosity", "opportunity", "spirit", "perseverance").contains(args[1].toLowerCase());
                 if(sol >= 0 && validRover) {
                     run(sol, args[1], args[2]);
                     failed = false;
