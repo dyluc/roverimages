@@ -21,4 +21,4 @@ the following would fetch all curiosity rover images from sol 19 saving them int
 > rovfetch 19 curiosity .
 ```
 
-Blog post [here](https://thenullproject.com/page.html?fetchpost=2).
+Blog post [here](https://dyluc.github.io/2020/12/07/rover-images.html).
